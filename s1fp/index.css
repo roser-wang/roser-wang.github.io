@@ -1,0 +1,10 @@
+.camera {
+    position:relative;
+    scale: 0.25;
+}
+#body {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    background-color: blue;
+}
