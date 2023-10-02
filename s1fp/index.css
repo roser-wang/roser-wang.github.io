@@ -1,10 +1,32 @@
+html {
+    cursor: url('cursor.png') 32.5 32.5, auto;
+}
+
 .camera {
     position:relative;
     scale: 0.25;
 }
-#body {
+#camerabody {
     position: absolute;
     width: 50px;
     height: 100px;
+    background-color: blue;
+}
+
+#foreground {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+
+#pointing {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+#pointing:hover {
     background-color: blue;
 }
