@@ -10,6 +10,19 @@ body {
     margin-top: calc(50vh - 321px);
 }
 
+#webring {
+    position: absolute;
+    font-size: 48px;
+    word-spacing: normal;
+    bottom: 0px;
+    left: 0px;
+    padding: 30px;
+}
+
+#webring-link {
+    color: white;
+}
+
 .binarycodewrapper {
     position: absolute;
     width: 612px;
@@ -62,6 +75,7 @@ body {
 
 #flexbox:hover .old {
     opacity: 0;
+    visibility: hidden;
 }
 
 #flexbox:hover .new {
@@ -124,12 +138,51 @@ body {
     animation: blink-animation 0.7s ease-in infinite;
     animation-direction: alternate;
 }
+
 @keyframes blink-animation {
 0% {
     opacity: 0;
     }
 100% {
     opacity: 1;
+    }
+}
+
+.blink-text {
+    animation: blink-text-animation 1s ease-in infinite;
+    animation-direction: alternate;
+}
+
+.blink-text:hover {
+    visibility: hidden;
+}
+
+@keyframes blink-text-animation {
+0% {
+    opacity: 0.5;
+    }
+100% {
+    opacity: 1;
+    }
+}
+
+/* WEBRING STYLE */
+
+.blink-webring:hover {
+    animation: blink-webring-animation 0.5s ease-in infinite;
+    animation-direction: alternate;
+}
+
+.blink-webring {
+    opacity: 0;
+}
+
+@keyframes blink-webring-animation {
+0% {
+    opacity: 0;
+    }
+100% {
+    opacity: 0.5;
     }
 }
 
