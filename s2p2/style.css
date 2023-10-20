@@ -68,6 +68,17 @@ a:visited {
   float: none;
 }
 
+#heart {
+  background-image:url(heart.svg);
+  position: absolute;
+  width:800px;
+  height: 800px;
+}
+
+#heart:hover {
+  background-image: url(triangle.svg);
+  transition: ease-in 1s;
+}
 @media screen and (max-width: 1000px) {
   #leftcol {
     width: 100vw;
