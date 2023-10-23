@@ -90,3 +90,59 @@ a:visited {
     overflow-y: hidden;
   }
 }
+
+svg polyline,
+svg line,
+svg path {
+  fill: none;
+  stroke:#b30000;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: 0.3s;
+}
+
+#wrapper {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+#triangle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #b30000;
+  transform-origin: 50% 50%;
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+#triangle:hover {
+  animation: morph-anim 2s ease-in-out forwards;
+}
+
+@keyframes morph-anim {
+  0% {
+    width: 200px;
+    height: 200px;
+    background-color: #b30000;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    border-radius: 0px;
+  }
+  50% {
+    width: 200px;
+    height: 200px;
+    background-color: #b30000;
+    clip-path: none
+    border-radius: 0px;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    background-color: #b30000;
+    clip-path: none;
+    border-radius: 100px;
+  }
+}
