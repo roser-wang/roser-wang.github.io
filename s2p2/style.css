@@ -1,7 +1,9 @@
 html, body {
-    font-family: 'Share Tech Mono', serif;
-    /* font-size: 48px; */
-    color: white;
+  margin: 0px;
+  font-family: 'Share Tech Mono', serif;
+  /* font-size: 48px; */
+  color: white;
+  text-align:center;
 }
 
 a:link {
@@ -38,60 +40,59 @@ a:visited {
   background: #b30000; 
 }
 
+/* #leftcol {
+  direction: rtl;
+  text-align: left;
+}
+
+#leftcol > * {
+  direction: ltr;
+} */
+
 #leftcol {
   color: #ffffff;
   font-size: 5vw;
-  width: 50vw;
+  width: 50%;
   height: 100vh;
   float: left;
   background: linear-gradient(47deg, rgba(2,0,36,1) 27%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
   background-size: 200%;
-  overflow-x: scroll;
-}
-
-#leftcol > div {
-    width: 1000vw
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 #rightcol {
   color: #ffffff;
-  font-size: 1em;
-  width: 50vw;
+  font-size: 10em;
+  width: 50%;
   height: 100vh;
   float: right;
   background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  overflow-x: hidden;
   overflow-y: scroll;
   background-size: 200%;
 }
+
+/* #leftcol > div {
+    width: 1000vw
+} */
 
 #floatclear {
   float: none;
 }
 
-#heart {
-  background-image:url(heart.svg);
-  position: absolute;
-  width:800px;
-  height: 800px;
-}
-
-#heart:hover {
-  background-image: url(triangle.svg);
-  transition: ease-in 1s;
-}
 @media screen and (max-width: 1000px) {
   #leftcol {
     width: 100vw;
-    font-size: 10vw;
   }
   #rightcol {
-    width: 50vw;
+    width: 100vw;
     height: auto;
     overflow-y: hidden;
   }
 }
 
-svg polyline,
+/* svg polyline,
 svg line,
 svg path {
   fill: none;
@@ -100,10 +101,10 @@ svg path {
   stroke-linecap: round;
   stroke-linejoin: round;
   transition: 0.3s;
-}
+} */
 
 #wrapper {
-  position: absolute;
+  position: relative;
   width: 400px;
   height: 400px;
   display: flex;
@@ -114,7 +115,7 @@ svg path {
   position: relative;
   width: 200px;
   height: 200px;
-  background-color: #b30000;
+  background-color: brown;
   transform-origin: 50% 50%;
   clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
@@ -127,21 +128,21 @@ svg path {
   0% {
     width: 200px;
     height: 200px;
-    background-color: #b30000;
-    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    background-color: brown;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%, 100% 100%);
     border-radius: 0px;
   }
   50% {
     width: 200px;
     height: 200px;
     background-color: #b30000;
-    clip-path: none
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%);
     border-radius: 0px;
   }
   100% {
     width: 200px;
     height: 200px;
-    background-color: #b30000;
+    background-color: whitesmoke;
     clip-path: none;
     border-radius: 100px;
   }
