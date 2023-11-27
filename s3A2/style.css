@@ -16,8 +16,6 @@ a:visited {
 
 /* PART 1: ZOOM CALL  */
 #wrapper-js {
-    left:0;
-    top:0;
     width: 100vw;
     height: fit-content;
     display: flex;
