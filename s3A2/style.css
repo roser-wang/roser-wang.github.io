@@ -1,9 +1,5 @@
 body {
     font-family: 'Inter', serif;
-    font-size: 36px;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(#FF6D05 0%, black 100%);
 }
 
 a:link {
@@ -18,7 +14,37 @@ a:visited {
     text-decoration: none;
 }
 
-#content-container {
+/* PART 1: ZOOM CALL  */
+#wrapper-js {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+}
+
+/* PART 2: ZOOM ANIMATION  */
+#wrapper-cl {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+}
+
+/* PART 3: APP IN ACTION  */
+#wrapper-rw {
+    width: 100vw;
+    height: fit-content;
+    background: linear-gradient(#FF6D05 0%, black 100%);
+    color: white;
+}
+
+#content-container{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -38,6 +64,8 @@ a:visited {
     align-items:center;
     justify-content: center;
     text-align: center;
+    font-size: 36px;
+    font-weight: bold;
     width: 100%;
     height: 186px;
 }
