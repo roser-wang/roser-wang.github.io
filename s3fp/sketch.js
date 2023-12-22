@@ -7,8 +7,15 @@ let mic;
 let song;
 let button, button2;
 let input;
+let c1, c2, c3;
+let oldColor1 = 0, newColor1 = 60;
+let oldColor2 = 100, newColor2 = 160;
+let oldColor3 = 200, newColor3 = 260;
 let listening = false;
 let drawing = false;
+let change = 0;
+let counter = 0;
+let counter2 = 0;
 
 
 function preload() {
@@ -41,11 +48,11 @@ function draw() {
   
 //To draw or not
   if(drawing === false){
-    // clear();
-    background(10,50,150);
+    clear();
+    background(224,100,60);
   } else {
-  
   }
+
   
 //2 modes amplitude input change
   if(song.isPlaying()){
@@ -60,19 +67,43 @@ function draw() {
   count = floor(map(input, 0, 1, 6, 24));
   
   //ambient light
+  colorMode(HSB);
+  // ambientLight(y2, y2/2, y2/3);
+  ambientLight(60, 50, 75 + y3);
   colorMode(RGB);
-  ambientLight(y2, y2/2, y2/3);
   pointLight(180, y2, y2, width/2, height/2, 1000);
   
 
   
   //3D Shape Setup
-  rotateX(frameCount * 0.005);
-  rotateZ(frameCount * 0.005);
+  translate(mouseX - width/2, mouseY - height/2, 0);
+  rotateX(frameCount * 0.075);
+  rotateZ(frameCount * 0.075);
   colorMode(HSB);
-  // ambientMaterial(50,200,0);
   noStroke();
-  coneColor = random(0,359);
+  
+  
+  if (counter > 100) {
+    oldColor1 = newColor1;
+    oldColor2 = newColor2;
+    oldColor3 = newColor3;
+    counter = 0;
+    newColor1 = random(0,90);
+    newColor2 = random(91,180);
+    newColor3 = random(181,270);
+    change = 0;
+  }
+  counter = counter + 1;
+  
+  c1a = color(oldColor1, 100, y3);
+  c1b = color(newColor1, 100, y3);
+  let c1 = lerpColor(c1a, c1b, change);
+  c2a = color(oldColor2, 100, y3);
+  c2b = color(newColor2, 100, y3);
+  let c2 = lerpColor(c2a, c2b, change);
+  c3a = color(oldColor3, 100, y3);
+  c3b = color(newColor3, 100, y3);
+  let c3 = lerpColor(c3a, c3b, change);
   
   //FFT analysis
   fft.analyze();
@@ -88,50 +119,50 @@ function draw() {
   lowmdMap = map(lowmd, 100, 220, 5, 50);
   bsMap = map(bs, 100, 200, 5, 50);
   
-  mvX = mouseX;
-  mvY = mouseY;
+   // Degree * Math.PI/180
   //sound viz
   push();
-  translate(0, y/2,-y/2);
-  rotateY(1.5);
-  rotateZ(1.5);
-  ambientMaterial(coneColor, 100, y3);
-  cone1 = cone(trbMap, y, count, 6);
+  translate(0, y/2,-y/2); 
+  rotateY(90 * Math.PI/180);
+  rotateZ(90 * Math.PI/180);
+  ambientMaterial(c1);
+  cone1 = cone(trbMap, y, 24, 6);
+  change += 0.01;
   pop();
   
   push();
   translate(0,0,0);
   ambientMaterial(60, 100, y3);
-  cone3 = cone(mdMap, y, count, 6);
+  cone3 = cone(mdMap, y, 24, 6);
   pop();
   
   push();
   translate(0,y,0);
-  rotateX(135);
-  ambientMaterial(coneColor + 120, 100, y3);
-  cone2 = cone(highmdMap, y, count, 1);
+  rotateX(180 * Math.PI/180);
+  ambientMaterial(c2);
+  cone2 = cone(highmdMap, y, 24, 1);
   pop();
   
   push();
   translate(y/2,y/2,0);
-  rotateZ(-30);
+  rotateZ(90 * Math.PI/180);
   ambientMaterial(180, 100, y3);
-  cone4 = cone(lowmdMap, y, count, 1);
+  cone4 = cone(lowmdMap, y, 24, 1);
   pop();
   
   push();
   translate(-y/2,y/2,0);
-  rotateZ(80);
-  ambientMaterial(coneColor + 240, 100, y3);
-  cone5 = cone(bsMap, y, count, 1);
+  rotateZ(270 * Math.PI/180);
+  ambientMaterial(c3);
+  cone5 = cone(bsMap, y, 24, 1);
   pop();
   
   push();
   translate(0, y/2, y/2);
-  rotateY(-1.5);
-  rotateZ(1.5);
+  rotateY(-90 * Math.PI/180);
+  rotateZ(90 * Math.PI/180);
   ambientMaterial(300, 100, y3);
-  cone6 = cone(bsMap, y, count, 1);
+  cone6 = cone(bsMap, y, 24, 1);
   pop();
 }
 
