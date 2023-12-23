@@ -1,0 +1,44 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family:"Rajdhani";
+}
+canvas {
+  display: block;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-family:"Rajdhani";
+  font-size: 24px;
+  width: 180px;
+  padding: 8px;
+  background-color: rgba(255, 188, 166, 1);
+  border-radius: 8px;
+}
+
+.button:hover {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-family:"Rajdhani";
+  font-size: 24px;
+  color: rgba(255, 188, 166, 1);
+  width: 180px;
+  padding: 8px;
+  background-color: black;
+  border-radius: 8px;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: fit-content;
+  font-size: 36px;
+  color:rgba(255, 188, 166, 1);
+}

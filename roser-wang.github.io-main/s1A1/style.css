@@ -1,0 +1,49 @@
+#wrapper {
+    display: flex;
+    justify-content: center;
+}
+#mono {
+    font-size: 10px;
+    line-height: 10px;
+    letter-spacing: -5px;
+    width: 650px;
+  }
+  
+  .memo {
+    font-size: 12px;
+    letter-spacing: 0px;
+    color: grey;
+  }
+  
+  .title {
+    font-size: 24px;
+    letter-spacing: 0px;
+    font-weight: bold;
+  }
+  
+  .paragraph {
+    font-size: 15px;
+    letter-spacing: 0px;
+    display: flex;
+    line-height: 20px;
+  }
+  
+  #dot1 {
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 0;
+    display: block;
+  }
+  
+  img {
+    padding: 30px 50px 20px 250px;
+    width: 20%;
+    min-width: 100px;
+    transition: all 1s ease; 
+  }
+  
+  img:hover {
+    width: 300px;
+    transition: all 1s ease;
+  }
