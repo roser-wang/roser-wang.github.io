@@ -1,0 +1,594 @@
+#displaywrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#wrapper {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    background-color: #005CAF;
+    overflow: hidden;
+  }
+  
+  #floor-filter1 {
+    position: absolute;
+    top: 361.04px;
+    left: 158.46px;
+    width: 332.37px;
+    height: 480px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 40%);
+    background-color: white;
+    overflow: hidden;
+    transform-origin: 0% 0%;
+    transform: rotate(-30deg);
+  }
+  
+  #floor-filter2 {
+    position: absolute;
+    top: 258.7px;
+    left: -65.92px;
+    width: 474.35px;
+    height: 172.65px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 40%);
+    background-color: transparent;
+    overflow: hidden;
+    transform-origin: 0% 0%;
+    transform: rotate(-30deg);
+    clip-path: polygon(0% 100%,100% 0%, 100% 100%);
+  }
+  
+  #background-floor {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 800px;
+    height: 600px;
+    background-color: white;
+    opacity: 0.7;
+    background-image:  linear-gradient(#C78550 1px, transparent 1px), linear-gradient(to right, #C78550 1px, white 1px);
+    background-size: 15px 15px;
+  }
+  
+  #background-white {
+    position: absolute;
+    width: 600px;
+    height: 450px;
+    top: 75px;
+    left: 100px;
+    background-color: white;
+    overflow: hidden;
+  }
+  
+  #background-white2 {
+    position: absolute;
+    width: 404.91px;
+    height: 800px;
+    top: 0px;
+    left: 332.45px;
+    background-color: white;
+    overflow: hidden;
+    transform-origin: 0% 0%;
+    transform: rotate(-30deg);
+  }
+  
+  #background-rotate-black {
+    position: absolute;
+    width: 800px;
+    height: 390px;
+    background-color: #3a3226;
+    transform-origin: 0% 0%;
+    transform: rotate(-30deg);
+    top: 550px;
+    left: -170px;
+  }
+  
+  #background-red {
+    position: absolute;
+    top: 600px;
+    left: 19.46px;
+    background-color: #f75c2f;
+    transform-origin: 0% 0%;
+    transform: rotate(-30deg);
+    width: 280px;
+    height: 29px;
+  }
+  
+  .dashedline {
+    width: 100%;
+    height: 1px;
+    position: relative;
+    background-image: linear-gradient(
+      to right,
+      #b4b4b4 40%,
+      rgba(255, 255, 255, 0) 0%
+    );
+    background-position: top;
+    background-size: 10px 1px;
+    background-repeat: repeat-x;
+    z-index: 10000;
+  }
+  
+  #circle-small {
+    position: relative;
+    margin: calc(50% - 70px) auto;
+    width: 140.26px;
+    height: 140.26px;
+    border: 1px dashed #b4b4b4;
+    border-radius: 50%;
+  }
+  
+  #circle-small-invert {
+    position: absolute;
+    left: 447.5px;
+    top: 365px;
+    width: 140.26px;
+    height: 140.26px;
+    border-radius: 50%;
+    background-color: transparent;
+    mix-blend-mode: normal;
+    z-index: 15000;
+  }
+  
+  #circle-small-invert:hover {
+    background-color: blue;
+    mix-blend-mode: color;
+    transition: 0.2s ease-in;
+  }
+  
+  #circle-large {
+    position: absolute;
+    overflow: hidden;
+    top: 286.91px;
+    left: 370.13px;
+    width: 292.84px;
+    height: 292.84px;
+    border: 1px dashed #b4b4b4;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.5s ease-in;
+    /* z-index: 10000; */
+  }
+  
+  /* BEGIN CSS DRAWING */
+  
+  #box1-cover {
+    position: absolute;
+    left: 516px;
+    top: 210px;
+    width: 14.09px;
+    height: 0;
+    transform-origin: 0% 0%;
+    transform: rotate(-30deg);
+    border-top: 343.54px solid #3a3226;
+    border-left: 0px solid #3a3226;
+    border-right: 198.34px solid transparent;
+  }
+  
+  #box1-cover-white {
+    position: absolute;
+    top: 241px;
+    left: 630px;
+    background-color: #ffffff;
+    transform-origin: 0% 0%;
+    transform: rotate(-30deg);
+    width: 58.58px;
+    height: 135px;
+  }
+  
+  #box1-cover-red {
+    position: absolute;
+    top: 260.36px;
+    left: 607.24px;
+    background-color: #f75c2f;
+    transform-origin: 0% 0%;
+    transform: rotate(-30deg);
+    width: 222.43px;
+    height: 29px;
+  }
+  
+  #box1-cover-outside {
+    position: absolute;
+    top: 384.17px;
+    left: 700px;
+    background-color: #3a3226;
+    transform-origin: 0% 0%;
+    transform: skewy(-30deg);
+    width: 115.47px;
+    height: 116.3px;
+  }
+  
+  #box1-cover-triangle1 {
+    position: absolute;
+    top: 203px;
+    left: 700px;
+    transform-origin: 0% 100%;
+    transform: rotate(-30deg);
+    width: 0px;
+    height: 0px;
+    border-bottom: 38.52px solid transparent;
+    border-left: 22.24px solid #3a3226;
+  }
+  
+  #box1-cover-triangle2 {
+    position: absolute;
+    top: 362px;
+    left: 700px;
+    transform-origin: 0% 100%;
+    transform: rotate(-30deg);
+    width: 0px;
+    height: 0px;
+    border-bottom: 23px solid #3a3226;
+    border-left: 12px solid transparent;
+  }
+  
+  #box1-top {
+    position: absolute;
+    top: 210px;
+    left: 486.14px;
+    transform-origin: 0% 0%;
+    transform: rotate(-30deg);
+    width: 212.43px;
+    height: 0px;
+    border-top: 16px solid black;
+    border-left: 25.88px solid transparent;
+    border-right: 8.63px solid transparent;
+  }
+  
+  #box1-left {
+    position: absolute;
+    overflow: hidden;
+    top: 197px;
+    left: 509px;
+    transform-origin: 0% 0%;
+    transform: rotate(60deg);
+    width: 343.54px;
+    height: 0px;
+    border-bottom: 25.88px solid #787D7B;
+    border-left: 14.94px solid transparent;
+  }
+  
+  #box2-top {
+    position: absolute;
+    top: 117.91px;
+    left: 486.58px;
+    transform-origin: 0% 0%;
+    transform: rotate(15deg);
+    width: 97.98px;
+    height: 0px;
+    border-top: 14.49px solid black;
+    border-right: 14.94px solid transparent;
+  }
+  
+  #box2-left {
+    position: absolute;
+    top: 117.91px;
+    left: 486.58px;
+    transform-origin: 0% 0%;
+    transform: rotate(105deg);
+    width: 255px;
+    height: 0px;
+    border-top: 19.32px solid black;
+    border-left: 14.49px solid transparent;
+  }
+  
+  #box2-left-bottom {
+    position: absolute;
+    top: 373px;
+    left: 398.5px;
+    transform-origin: 0% 0%;
+    transform: rotate(15deg);
+    border-bottom: 5.18px solid transparent;
+    border-left: 19.32px solid black;
+  }
+  
+  #box2-bottom {
+    position: absolute;
+    top: 378px;
+    left: 398.5px;
+    background-color: white;
+    transform-origin: 0% 0%;
+    transform: skew(-105deg);
+    width: 25px;
+    height: 80px;
+  }
+  
+  #box2-cover-gradient {
+    position: absolute;
+    top: 209.93px;
+    left: 461.94px;
+    background-color: #3a3226;
+    width: 202px;
+    height: 173px;
+    transform-origin: 0% 0%;
+    transform: rotate(15deg);
+  }
+  
+  #box2-cover-white {
+    position: absolute;
+    top: 161.43px;
+    left: 474.92px;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 202px;
+    height: 50.15px;
+    transform-origin: 0% 0%;
+    transform: rotate(15deg);
+  }
+  
+  #box2-cover-yellow {
+    position: absolute;
+    top: 213.24px;
+    left: 474.53px;
+    background-color: #E8B647;
+    width: 53.18px;
+    height: 173px;
+    transform-origin: 0% 0%;
+    transform: rotate(15deg);
+  }
+  
+  #box2-cover-red {
+    position: absolute;
+    top: 150.8px;
+    left: 500px;
+    background-color: #f75c2f;
+    width: 26.88px;
+    height: 118.85px;
+    transform-origin: 0% 0%;
+    transform: rotate(15deg);
+  }
+  
+  #disk {
+    position: absolute;
+    overflow: hidden;
+    top: 426px;
+    left: 543px;
+    background-color: #E8B647;
+    width: 99.4px;
+    height: 108px;
+    transform-origin: 0% 0%;
+    transform: skew(24.5deg) rotate(-6.5deg);
+    border-radius: 10px;
+  }
+  
+  #disk-grey {
+    position: relative;
+    background-color: #787D7B;
+    width: 30.64px;
+    height: 66.87px;
+    float: right;
+    margin: calc(50% - 33px) 0;
+  }
+  
+  #disk-yellow {
+    position: absolute;
+    margin: calc(125%) 0;
+    background-color: #E8B647;
+    width: 100%;
+    height: 20%;
+  }
+  
+  #red-sheet {
+    position: absolute;
+    left: 144.5px;
+    margin: calc(50%) 0;
+    transform-origin: 0% 0%;
+    transform: rotate(-11deg);
+    width: 70.79px;
+    height: 210.31px;
+    background: linear-gradient(11deg, #f75c2f 50.5%, #9f353a 0);
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+  }
+  
+  #game-console {
+    position: absolute;
+    top: 260px;
+    left: 300.67px;
+    background-color: #f75c2f;
+    width: 98.5px;
+    height: 197.25px;
+    padding: 12px 10px 0 10px;
+    border-radius: 10px;
+    transform-origin: 0% 0%;
+    transform: rotate(30deg);
+  }
+  
+  #game-console-screen {
+    position: relative;
+    background-color: white;
+    width: 82.5px;
+    height: 66px;
+    background-size: 100px 12px;
+    background-image: linear-gradient(
+      to bottom,
+      #005CAF 20%,
+      transparent 3px,
+      transparent 40%,
+      #005CAF 40%,
+      transparent calc(40% + 1px)
+    );
+    border: 8px solid black;
+    border-radius: 5px;
+  }
+  
+  #game-console-direction-button {
+    position: relative;
+    top: 28.29px;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, #9f353a, #f75c2f 85%);
+  }
+  
+  .button-inner-circle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform-origin: 50% 50%;
+    transform: scale(0.85);
+    background-image: linear-gradient(135deg, #9f353a, #f75c2f 70%);
+  }
+  
+  #cross {
+    background: black;
+    height: 24px;
+    position: absolute;
+    margin: calc(50% - 12px) calc(50% - 4px);
+    width: 8px;
+    border-radius: 4px;
+  }
+  #cross:after {
+    background: black;
+    content: "";
+    height: 8px;
+    left: -8px;
+    position: absolute;
+    top: 8px;
+    width: 24px;
+    border-radius: 4px;
+  }
+  
+  #game-console-hit-button {
+    position: relative;
+    float: right;
+    width: 37px;
+    height: 16px;
+    border-radius: 8px;
+    background-image: linear-gradient(30deg, #9f353a, #f75c2f 85%);
+    transform: rotate(-30deg);
+  }
+  
+  #game-console-hit-button-black {
+    position: relative;
+    top: calc(50% - 6px);
+    left: calc(50% - 16px);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: black;
+  }
+  
+  #game-console-hit-button-black:after {
+    position: absolute;
+    content: "";
+    left: 20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: black;
+  }
+  
+  .game-console-speakerline {
+    width: 24px;
+    height: 2px;
+    position: relative;
+    margin: 0 0 4px 0;
+    background-image: linear-gradient(
+      to right,
+      black 30%,
+      rgba(255, 255, 255, 0) 0%
+    );
+    background-position: top;
+    background-size: 6px 2px;
+    background-repeat: repeat-x;
+  }
+  
+  #pig-body {
+    position: absolute;
+    top: 334.98px;
+    left: 174.77px;
+    width: 89.72px;
+    height: 69.04px;
+    border-radius: 50%;
+    background-image: radial-gradient(white -10%, #E87A90);
+    transform-origin: 0% 0%;
+    transform: rotate(30deg);
+  }
+  
+  .pig-tail-ear {
+    position: relative;
+    width: 29.72px;
+    height: 16.79px;
+    border-radius: 50%;
+    background-image: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0) 30%,
+      #E87A90
+    );
+  }
+  
+  #pig-nose {
+    position: relative;
+    width: 16.82px;
+    height: 35.51px;
+    border-radius: 40%;
+    background-image: radial-gradient(white, #E87A90);
+    float: right;
+    left: 8px;
+  }
+  
+  .card {
+    position: absolute;
+    top: 362px;
+    padding: 10px;
+    width: 65.16px;
+    height: 117.79px;
+    border: 0.5px solid white;
+    background-color: rgba(255, 255, 255, 0.35);
+    transform-origin: 0% 50%;
+  }
+  .card:after {
+    position: absolute;
+    content: "";
+    left: 10px;
+    top: 40px;
+    width: 15px;
+    height: 7.5px;
+    background-color: #9f353a;
+    transform: skewy(30deg) rotate(-60deg);
+  }
+  
+  #text-sheet {
+    position: absolute;
+    top: 361.04px;
+    left: 158.46px;
+    width: 327px;
+    height: 480px;
+    border: solid #005CAF;
+    border-size: 1px 2px 2px 1px;
+    background-size: 100px 12px;
+    background-image: linear-gradient(
+      to bottom,
+      #005CAF 20%,
+      transparent 3px,
+      transparent 40%,
+      #005CAF 40%,
+      transparent calc(40% + 1px)
+    );
+    transform-origin: 0% 0%;
+    transform: rotate(-30deg);
+  }
+  
+  #foreground-black {
+    position: absolute;
+    width: 800px;
+    height: 600px;
+    top: 0px;
+    background-color: black;
+    transition: 0.5s ease-in;
+  }
+  
+  #foreground-black:hover {
+    width: 800px;
+    height: 600px;
+    background-color: transparent;
+    transition: 0.5s ease-in;
+  }
+
+  #foreground-black:hover ~ #circle-large {
+    opacity: 1;
+    transition: 0.5s ease-in;
+  }
+  
+  
+  
